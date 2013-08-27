@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\usepackage{amsmath}
+
+%%% Delete this when we are actually doing an assignment
+\usepackage{lipsum}
+%%%
+
+%% This is so we can put a title with the header
+\renewcommand{\thispagestyle}[1]{}
+%%
+
+%%% Heading
+\pagestyle{fancy}
+\rhead{Stefan\ Eng\\Dr.\ Katherine\ Stevenson\\Due\ Date}
+%%%
+
+%%% Title
+\title{
+    \textsc{Math 320\\Homework 1}
+}
+\date{}
+%%%
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+\lipsum[1]
+
+\section*{Problem 2}
+\begin{equation}
+  x = a_0 + \cfrac{1}{a_1
+          + \cfrac{1}{a_2
+          + \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }
+\end{equation}
+\lipsum[2]
+
+\section*{Problem 3}
+\begin{equation}
+M = \begin{bmatrix}
+       \frac{5}{6} & \frac{1}{6} & 0           \\[0.3em]
+       \frac{5}{6} & 0           & \frac{1}{6} \\[0.3em]
+       0           & \frac{5}{6} & \frac{1}{6}
+     \end{bmatrix}
+\end{equation}
+
+\end{document}
+
