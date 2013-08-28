@@ -1,0 +1,162 @@
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lecture Specific Information to Fill Out
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\LectureTitle}{Lecture Notes}
+\newcommand{\LectureDate}{\today}
+\newcommand{\LectureClassName}{Class}
+\newcommand{\LatexerName}{Stefan\ Eng}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Change "article" to "report" to get rid of page number on title page
+%\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{abstract}
+
+%%% Delete when in use
+\usepackage{lipsum}
+%%%
+
+% In case you need to adjust margins:
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+% Setup the header and footer
+\pagestyle{fancy}
+\lhead{\LatexerName}
+\chead{\LectureClassName: \LectureTitle}
+\rhead{\LectureDate}
+\lfoot{\lastxmark}
+\cfoot{}
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterTopicHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}
+\newcommand{\exitTopicHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+                                   \nobreak\extramarks{#1}{}\nobreak}
+
+\newlength{\labelLength}
+\newcommand{\labelAnswer}[2]
+  {\settowidth{\labelLength}{#1}
+   \addtolength{\labelLength}{0.25in}
+   \changetext{}{-\labelLength}{}{}{}
+   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#2\end{minipage}}
+   \marginpar{\fbox{#1}}
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   \changetext{}{+\labelLength}{}{}{}}
+
+\setcounter{secnumdepth}{0}
+\newcommand{\TopicName}{}
+\newcounter{TopicCounter}
+\newenvironment{Topic}[1][Problem \arabic{TopicCounter}]
+  {\stepcounter{TopicCounter}
+   \renewcommand{\TopicName}{#1}
+   \section{\TopicName}
+   \enterTopicHeader{\TopicName}}
+  {\exitTopicHeader{\TopicName}}
+  
+\setcounter{secnumdepth}{0}
+\newcommand{\SectionName}{}
+\newcounter{SectionCounter}[TopicCounter]
+\newenvironment{Section}[1][Example \arabic{SectionCounter}]
+  {\stepcounter{SectionCounter}
+   \renewcommand{\SectionName}{#1}
+   \section{\SectionName}
+   \enterTopicHeader{\SectionName}}
+  {\exitTopicHeader{\SectionName}}
+
+\setcounter{secnumdepth}{0}
+\newcounter{BoxCounter}[TopicCounter]
+\newcommand{\boxtext}[1]
+  {
+  % We put this space here to make sure we're disconnected from the previous
+   % passage
+   \stepcounter{BoxCounter}
+   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#1\end{minipage}}\enterTopicHeader{\SectionName}\exitTopicHeader{\SectionName}\marginpar{\fbox{\#\arabic{BoxCounter}}}
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   \vskip10pt
+   }
+
+\renewcommand{\contentsname}{{\normalsize Topics Covered}}
+\renewcommand{\abstractname}{\LectureTitle\ Summary}
+\renewcommand{\absnamepos}{flushleft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{spacing}{1.1}
+\newpage
+
+\begin{abstract}
+\lipsum[1]
+\end{abstract}
+
+\tableofcontents
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
+\vskip10pt
+\hrule
+\vskip10pt
+
+% Keeping the table of contents separate is better
+\newpage
+
+% When topics are long, it may be desirable to put a \newpage or a
+% \clearpage before each Topic environment
+%\newpage
+
+\begin{Topic}[Derivatives \Roman{TopicCounter}]
+    \lipsum[2]
+\end{Topic}
+
+\begin{Topic}[Derivatives \Roman{TopicCounter}]
+\lipsum[3]
+
+\begin{Section}
+    \lipsum[4]
+    \boxtext{
+        \lipsum[1]
+    }
+    \boxtext{
+        \lipsum[2]
+    }
+\end{Section}
+
+\end{Topic}
+
+\begin{Topic}[Combining Topic I \& II]
+    \lipsum[3]
+
+    \begin{Section}
+    \boxtext{
+        \lipsum[1]
+    }    
+    \end{Section}
+
+    \begin{Section}
+    \boxtext{
+        \lipsum[2]
+    }
+    \end{Section}
+    
+\end{Topic}
+
+
+\newpage
+
+\end{spacing}
+\end{document}
