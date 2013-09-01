@@ -1,0 +1,91 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[top=1.5in,left=1in,right=1in,bottom=1.5in,headheight=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Comment out this whole section if we want default spacing %%%
+% \usepackage{setspace}
+
+% Choose one of these for the line spacing
+
+% \doublespacing
+% \singlespacing
+% \onehalfspacing
+
+% For other sizes use the \setstretch command like this:
+
+% \setstretch{1.8}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Delete this when we are actually doing an assignment
+\usepackage{lipsum}
+%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Information for Title %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Fill this in with your own information
+
+\newcommand{\name}{
+% Enter your name here
+Stefan Eng
+}
+
+\newcommand{\professor}{
+% Professors name goes here
+Dr. Katherine Stevenson
+}
+
+\newcommand{\classcode}{
+% Class name "code" goes here. e.g, Math320
+Math 320
+}
+
+\newcommand{\classname}{
+% Class name goes here
+Foundations of Higher Mathematics
+}
+
+\newcommand{\duedate}{
+% Due date goes here
+9/4/13
+}
+
+\newcommand{\journal}{
+% Enter journal number
+1
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Heading -- No need to edit %%%
+\pagestyle{fancy}
+\rhead{\name \\ \professor \\ \classcode \\ \duedate}
+%%%
+
+
+
+% Good reference for math commands web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html
+
+\begin{document}
+\pagenumbering{gobble}
+%%% Make the title %%%
+\begin{center}
+\textsc{\Large \classname}\\[.3cm]
+\textsc{\Large Journal \journal}\\[1cm]
+\end{center}
+%%% End title %%%
+
+%%% Start Journal Here Here %%%
+\lipsum[1-6]
+
+\end{document}
+
+%%% End assignment %%%
