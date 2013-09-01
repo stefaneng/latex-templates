@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+
+%%% Math stuff
+\usepackage{amsmath,amsthm}
+\usepackage{thmtools}
+
+%%% For making theorems and things
+%%% See ftp://ftp.dante.de/pub/tex/macros/latex/exptl/thmtools/thmtools.pdf
+\declaretheorem[numberwithin=subsection]{theorem}
+\declaretheorem[numbered=no]{definition}
+\declaretheorem[numbered=no]{proposition}
+
+%%% Delete when in use
+\usepackage{lipsum}
+
+%%% Custom commands %%%
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%
+%%% Title Page %%%
+%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+\begin{center}
+\ \\[1in]
+\textsc{\LARGE School name}\\[1.5cm]
+
+\textsc{\Large Class number}\\[0.5cm]
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries Class name\\[0.4cm] }
+
+\HRule \\[1.5cm]
+
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+John \textsc{Smith}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Dr.~Mark \textsc{Brown}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Bottom of the page
+{\large Season Year}
+
+\end{center}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Table of contents %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+\tableofcontents
+\vfill
+\columnbreak
+
+\listoftheorems
+
+\end{multicols}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\lipsum[1-2]
+\subsection{One}
+
+\begin{proposition}
+BLAH
+\end{proposition}
+
+\begin{theorem}[Hello]
+Hello
+\end{theorem}
+\section{Blah}
+\lipsum[5]
+\subsection{Two}
+\begin{definition}
+Hello
+\end{definition}
+\lipsum[10-14]
+\subsection{Beep}
+\lipsum[7-11]
+\end{document}
