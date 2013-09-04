@@ -1,5 +1,4 @@
 # Latex Templates
-===============
 
 Various LaTeX Templates. See below for examples.
 
